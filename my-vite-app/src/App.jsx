@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import background from './assets/background.jpg'
 import './App.css'
 
 function App() {
@@ -11,9 +10,7 @@ function App() {
 
   return (
     <>
-      {/* background image*/}
-      <div style={{ backgroundImage: `url(${background})`, backgroundSize: 'cover', backgroundPosition: 'center',minHeight: '30vh' }}>        
-      </div>
+      {/* 这里的图片我删掉了 */}
       <h1>welcome to my blog</h1>
       <div className='workArea'>
         <p>work area</p>
