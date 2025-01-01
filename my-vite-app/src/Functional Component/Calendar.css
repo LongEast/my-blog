@@ -1,0 +1,22 @@
+.calendar-block {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.fc {
+    font-family: Arial, sans-serif;
+}
+
+.fc-daygrid-event {
+    background-color: #4CAF50; /* 修改事件背景颜色 */
+    color: white; /* 修改事件字体颜色 */
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.fc-day {
+    background-color: #e3e3e3; /* 修改每一天的背景色 */
+}

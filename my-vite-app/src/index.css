@@ -27,7 +27,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-image: url('assets/banner.jpg'); /* 设置背景图片 */
+  /* background-image: url('assets/banner.jpg'); 设置背景图片 */
   background-size: cover; /* 使背景图片覆盖整个页面 */
   background-position: center center; /* 使背景图片水平和垂直居中 */
   background-repeat: no-repeat; /* 确保背景图片不重复 */

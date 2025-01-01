@@ -5,33 +5,61 @@
   text-align: center;
 }
 
-.workArea {
-  text-align: left;
-  margin-left: 0;
-  padding-left: 0;
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  padding: 10px;
+  background-color: #f0f0f0;
+  width: 100vh; /* 使navbar宽度为100% */
+  box-sizing: border-box; /* 确保padding计算在宽度内 */
+}
+.logo img {
+  width: 50px; /* 根据需要调整logo大小 */
+}
+
+.workspace {
+  margin: 0 20px; /* 在工作区和logo之间添加一些间距 */
+}
+
+.menu {
+  position: relative; /* 使下拉菜单相对定位 */
+  cursor: pointer;
+}
+
+.menu ul {
+  position: absolute; /* 绝对定位下拉菜单 */
+  top: 100%; /* 显示在菜单下方 */
+  left: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu ul li {
+  padding: 10px;
+}
+
+.links a {
+  margin: 0 15px; /* 连接之间的间距 */
+}
+
+.search {
+  margin-left: auto; /* 将搜索框推到最右侧 */
 }
 
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+h2 {
+  text-align: center;
 }
 

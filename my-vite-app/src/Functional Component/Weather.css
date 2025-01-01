@@ -1,0 +1,11 @@
+.weather {
+    margin-top: 10px;
+    text-align: center;
+}
+.weather-block {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    width: 45%; /* 可根据需要调整宽度 */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
