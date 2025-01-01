@@ -1,9 +1,14 @@
 import { useState } from 'react';
 import './App.css';
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Clock from './Functional Component/Clock';
 import Weather from './Functional Component/Weather';
 import Calendar from './Functional Component/Calendar';
+
+import HomePage from './pages/HomePage';
+import BlogPage from './pages/BlogPage';
+
 
 function App() {
   const [isArticleOpen, setIsArticleOpen] = useState(false);
@@ -27,6 +32,19 @@ function App() {
 
   return (
     <>
+      <Router>
+        <div>
+          <nav>
+            <Link to='/'>Home</Link>
+            <Link to='/blog'>Blog</Link>
+          </nav>
+          <Routes>
+            <Route path='/' element={<HomePage />} />
+            <Route path='/blog' element={<BlogPage />} />
+          </Routes>
+        </div>
+      </Router>
+
       <div className='navbar'>
         <div className='logo'>
           <img src='https://via.placeholder.com/150' alt='logo' />
@@ -38,10 +56,12 @@ function App() {
           className='menu' 
           onMouseEnter={handleArticleMouseEnter} 
           onMouseLeave={handleArticleMouseLeave}>
-          文章
+          博客
           {isArticleOpen && (
             <ul>
-              <li>选项 1</li>
+              <li>
+                <Link to='/'>文章 1</Link>
+              </li>
               <li>选项 2</li>
               <li>选项 3</li>
             </ul>
