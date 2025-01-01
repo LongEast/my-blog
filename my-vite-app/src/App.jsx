@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import React from 'react';
 import Clock from './Functional Component/Clock';
@@ -28,7 +28,7 @@ function App() {
   };
 
   return (
-    <Router>
+    <>
       <div className='navbar'>
         <div className='logo'>
           <img src='https://via.placeholder.com/150' alt='logo' />
@@ -94,7 +94,7 @@ function App() {
         } />
         <Route path="/articles" element={<Articles />} />
       </Routes>
-    </Router>
+    </>
   );
 }
 
