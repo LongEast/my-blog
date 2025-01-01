@@ -1,9 +1,11 @@
 import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import React from 'react';
 import Clock from './Functional Component/Clock';
 import Weather from './Functional Component/Weather';
 import Calendar from './Functional Component/Calendar';
+import Articles from './Functional Component/Articles';
 
 function App() {
   const [isArticleOpen, setIsArticleOpen] = useState(false);
@@ -32,7 +34,9 @@ function App() {
           <img src='https://via.placeholder.com/150' alt='logo' />
         </div>
         <div className='workspace'>
-          <button>Workspace</button>
+          <nav>
+            <Link to="/">工作间</Link>
+          </nav>
         </div>
         <div 
           className='menu' 
@@ -41,7 +45,7 @@ function App() {
           文章
           {isArticleOpen && (
             <ul>
-              <li>选项 1</li>
+              <li><Link to="/articles">选项 1</Link></li>
               <li>选项 2</li>
               <li>选项 3</li>
             </ul>
@@ -71,21 +75,27 @@ function App() {
       <div className='search'>
         <img src='https://via.placeholder.com/20' alt='搜索' />
       </div>
-      <div>
-        <Clock />
-      </div>
-      <div>
-        <Weather />
-      </div>
-      <div>
-        <Calendar />
-      </div>
-
       
-      <div className='content' >
-        <h1>欢迎来到我的博客</h1>
-        <p>这里是我的博客文章，欢迎大家来阅读。</p>
-      </div>
+      <Routes>
+        <Route path="/" element={
+          <>
+            <div>
+              <Clock />
+            </div>
+            <div>
+              <Weather />
+            </div>
+            <div>
+              <Calendar />
+            </div>
+            <div className='content' >
+              <h1>欢迎来到我的博客</h1>
+              <p>这里是我的博客文章，欢迎大家来阅读。</p>
+            </div>
+          </>
+        } />
+        <Route path="/articles" element={<Articles />} />
+      </Routes>
     </>
   );
 }
