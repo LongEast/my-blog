@@ -1,0 +1,45 @@
+/* Sidebar container */
+.react-pro-sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #2c3e50;
+    color: white;
+  }
+  
+  /* Menu item styling */
+  .react-pro-sidebar .pro-menu-item {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+  
+  .react-pro-sidebar .pro-menu-item:hover {
+    background-color: #34495e;
+  }
+  
+  /* Submenu styling */
+  .react-pro-sidebar .pro-sub-menu .pro-menu-item {
+    padding-left: 40px;
+  }
+  
+  /* Link styling */
+  .react-pro-sidebar a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .react-pro-sidebar a:hover {
+    color: #61dafb;
+  }
+  
+  /* Button styling */
+  .react-pro-sidebar button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .react-pro-sidebar button:hover {
+    color: #61dafb;
+  }
