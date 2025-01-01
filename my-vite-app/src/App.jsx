@@ -1,14 +1,11 @@
 import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Clock from './Functional Component/Clock';
 import Weather from './Functional Component/Weather';
 import Calendar from './Functional Component/Calendar';
-
-import HomePage from './pages/HomePage';
-import BlogPage from './pages/BlogPage';
-
+import Articles from './Functional Component/Articles';
 
 function App() {
   const [isArticleOpen, setIsArticleOpen] = useState(false);
@@ -31,20 +28,7 @@ function App() {
   };
 
   return (
-    <>
-      <Router>
-        <div>
-          <nav>
-            <Link to='/'>Home</Link>
-            <Link to='/blog'>Blog</Link>
-          </nav>
-          <Routes>
-            <Route path='/' element={<HomePage />} />
-            <Route path='/blog' element={<BlogPage />} />
-          </Routes>
-        </div>
-      </Router>
-
+    <Router>
       <div className='navbar'>
         <div className='logo'>
           <img src='https://via.placeholder.com/150' alt='logo' />
@@ -56,12 +40,10 @@ function App() {
           className='menu' 
           onMouseEnter={handleArticleMouseEnter} 
           onMouseLeave={handleArticleMouseLeave}>
-          博客
+          文章
           {isArticleOpen && (
             <ul>
-              <li>
-                <Link to='/'>文章 1</Link>
-              </li>
+              <li><Link to="/articles">选项 1</Link></li>
               <li>选项 2</li>
               <li>选项 3</li>
             </ul>
@@ -91,22 +73,28 @@ function App() {
       <div className='search'>
         <img src='https://via.placeholder.com/20' alt='搜索' />
       </div>
-      <div>
-        <Clock />
-      </div>
-      <div>
-        <Weather />
-      </div>
-      <div>
-        <Calendar />
-      </div>
-
       
-      <div className='content' >
-        <h1>欢迎来到我的博客</h1>
-        <p>这里是我的博客文章，欢迎大家来阅读。</p>
-      </div>
-    </>
+      <Routes>
+        <Route path="/" element={
+          <>
+            <div>
+              <Clock />
+            </div>
+            <div>
+              <Weather />
+            </div>
+            <div>
+              <Calendar />
+            </div>
+            <div className='content' >
+              <h1>欢迎来到我的博客</h1>
+              <p>这里是我的博客文章，欢迎大家来阅读。</p>
+            </div>
+          </>
+        } />
+        <Route path="/articles" element={<Articles />} />
+      </Routes>
+    </Router>
   );
 }
 
