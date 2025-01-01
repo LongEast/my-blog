@@ -1,0 +1,90 @@
+/* 导航栏样式 */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #b9f8ff;
+    color: white;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+  
+/* logo 图片样式 */
+.logo img {
+    height: 50px; 
+    width: 50px; 
+    margin-right: 10px; 
+    border-radius: 25%; 
+    object-fit: cover; 
+}
+
+  
+  /* 工作间按钮样式 */
+.workspace {
+    margin-right: auto; /* 使工作间按钮靠左 */
+    background-color: #e5dbdb; /* 默认背景颜色 */
+    border-radius: 20px; /* 圆角效果 */
+    padding: 10px 20px; /* 内边距增加可点击区域 */
+    transition: background-color 0.3s; /* 悬停过渡效果 */
+}
+
+.workspace:hover {
+    background-color: #555; /* 悬停时背景颜色 */
+}
+
+.menu {
+    position: relative;
+    margin: 0 15px; /* 按钮之间的间距 */
+    cursor: pointer;
+}
+
+/* 下拉菜单样式 */
+.menu ul {
+    position: absolute;
+    background-color: #444;
+    padding: 10px 0;
+    border-radius: 5px;
+    list-style: none;
+    display: none; /* 默认隐藏 */
+    flex-direction: row; /* 设置为横向排列 */
+}
+
+/* 鼠标悬停时显示子菜单 */
+.menu:hover ul {
+    display: flex; /* 鼠标悬停时显示子菜单，并设置为横向排列 */
+}
+
+/* 菜单项样式 */
+.menu li {
+    padding: 10px 20px; /* 调整内边距 */
+    margin-right: 10px; /* 添加右边距以增大横向间距 */
+    display: flex; /* 确保列表项自身也是flex容器 */
+    align-items: center; /* 垂直居中对齐内容 */
+}
+
+/* 菜单项悬停效果 */
+.menu li:hover {
+    background-color: #555; /* 悬停效果 */
+}
+
+  
+  /* 链接样式 */
+  .links {
+    display: flex;
+    margin: 0 15px;
+  }
+  
+  /* 链接样式 */
+  .links a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  
+  /* 链接悬停效果 */
+  .links a:hover {
+    text-decoration: underline; /* 悬停下划线效果 */
+  }

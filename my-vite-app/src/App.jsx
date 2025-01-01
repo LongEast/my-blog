@@ -1,100 +1,113 @@
-import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import React from 'react';
 import Clock from './Functional Component/Clock';
 import Weather from './Functional Component/Weather';
 import Calendar from './Functional Component/Calendar';
-import Articles from './Functional Component/Articles';
+
+import Navbar from './Functional Component/Navbar';
+import TodoList from './Functional Component/TodoList';
+import SearchEngine from './Functional Component/SearchEngine';
+import Banner from './Functional Component/Banner';
+
+
+import Articles from './Pages/Articles';
+import Archives from './Pages/Archives';
+import Categories from './Pages/Categories';
+
+import Gallery from './Pages/Gallery';
+import Tag from './Pages/Tag';
+
+import Blogroll from './Pages/Blogroll';
+import About from './Pages/About'; 
+
 
 function App() {
-  const [isArticleOpen, setIsArticleOpen] = useState(false);
-  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
-
-  const handleArticleMouseEnter = () => {
-    setIsArticleOpen(true);
-  };
-
-  const handleArticleMouseLeave = () => {
-    setIsArticleOpen(false);
-  };
-
-  const handleGalleryMouseEnter = () => {
-    setIsGalleryOpen(true);
-  };
-
-  const handleGalleryMouseLeave = () => {
-    setIsGalleryOpen(false);
-  };
 
   return (
     <>
-      <div className='navbar'>
-        <div className='logo'>
-          <img src='https://via.placeholder.com/150' alt='logo' />
-        </div>
-        <div className='workspace'>
-          <nav>
-            <Link to="/">工作间</Link>
-          </nav>
-        </div>
-        <div 
-          className='menu' 
-          onMouseEnter={handleArticleMouseEnter} 
-          onMouseLeave={handleArticleMouseLeave}>
-          文章
-          {isArticleOpen && (
-            <ul>
-              <li><Link to="/articles">选项 1</Link></li>
-              <li>选项 2</li>
-              <li>选项 3</li>
-            </ul>
-          )}
-        </div>
-        <div 
-          className='menu' 
-          onMouseEnter={handleGalleryMouseEnter} 
-          onMouseLeave={handleGalleryMouseLeave}>
-          图库
-          {isGalleryOpen && (
-            <ul>
-              <li>图片 1</li>
-              <li>图片 2</li>
-              <li>图片 3</li>
-            </ul>
-          )}
-        </div>
-        <div className='links'>
-          <a href='#about'>关于</a>
-          <a href='#friends'>好友链接</a>
-        </div>
-        <div className='todo'>
-          <button>待办</button>
-        </div>
-      </div>
-      <div className='search'>
-        <img src='https://via.placeholder.com/20' alt='搜索' />
-      </div>
+      
       
       <Routes>
+        {/* Routes for workspace-page */}
         <Route path="/" element={
           <>
-            <div>
+            <div className='container'>
+              <Navbar />
+              <Banner />
+              <SearchEngine />
+              <TodoList />
               <Clock />
-            </div>
-            <div>
               <Weather />
-            </div>
-            <div>
               <Calendar />
-            </div>
-            <div className='content' >
-              <h1>欢迎来到我的博客</h1>
-              <p>这里是我的博客文章，欢迎大家来阅读。</p>
             </div>
           </>
         } />
-        <Route path="/articles" element={<Articles />} />
+
+        {/* 文章页面 */}
+        <Route path="/Articles" element={
+          <>
+            <div className='container'>
+              <Navbar />
+              <Articles />
+            </div>
+          </>
+        } />
+        {/* 文章归档页面 */}
+        <Route path="/Archives" element={
+          <>
+            <div className='container'>
+              <Navbar />
+              <Archives />
+            </div>
+          </>
+        } />
+        {/* 文章分类页面 */}
+        <Route path="/Categories" element={
+          <>
+            <div className='container'>
+              <Navbar />
+              <Categories />
+            </div>
+          </>
+        } />
+
+        <Route path="/Gallery" element={
+          <>
+            <div className='container'>
+              <Navbar />
+              <Gallery />
+            </div>
+          </>
+        } />
+
+        <Route path="/Tag" element={
+          <>
+            <div className='container'>
+              <Navbar />
+              <Tag />
+            </div>
+          </>
+        } />
+        {/* 友链页面   */}
+        <Route path="/Blogroll" element={
+          <>
+            <div className='container'>
+              <Navbar />
+              <Blogroll />
+            </div>
+          </>
+        } />
+        {/* 关于页面 */}
+        <Route path="/About" element={
+          <>
+            <div className='container'>
+              <Navbar />
+              <About />
+            </div>
+          </>
+        } />
+
       </Routes>
     </>
   );
